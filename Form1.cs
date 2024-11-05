@@ -15,6 +15,19 @@ namespace POS
         public Form1()
         {
             InitializeComponent();
+            Clases.Employees employees = new Clases.Employees();
+            employees.mostrarEmpleados(dgvEmpleados);
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
