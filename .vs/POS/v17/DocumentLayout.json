@@ -3,11 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\clases\\employees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:clases\\employees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\formventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\formventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\recursividad\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\formventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\formventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Employees.cs",
-              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Clases\\Employees.cs",
-              "RelativeDocumentMoniker": "Clases\\Employees.cs",
-              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Clases\\Employees.cs",
-              "RelativeToolTip": "Clases\\Employees.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T22:33:12.128Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -52,14 +44,39 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\recursividad\\Program.cs",
-              "RelativeDocumentMoniker": "..\\..\\recursividad\\Program.cs",
-              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\recursividad\\Program.cs",
-              "RelativeToolTip": "..\\..\\recursividad\\Program.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAACsAAABgAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T22:24:55.261Z",
+              "WhenOpened": "2024-11-15T13:08:50.208Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormVentas.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\FormVentas.cs",
+              "RelativeDocumentMoniker": "Forms\\FormVentas.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\FormVentas.cs",
+              "RelativeToolTip": "Forms\\FormVentas.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAYwFoAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T13:05:48.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormVentas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\FormVentas.cs",
+              "RelativeDocumentMoniker": "Forms\\FormVentas.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\FormVentas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Forms\\FormVentas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T13:04:25.44Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
