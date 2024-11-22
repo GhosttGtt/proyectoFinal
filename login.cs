@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using POS.Clases;
@@ -26,12 +28,15 @@ namespace POS
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text;
-            string password = textBox2.Text;
+            string pass = textBox2.Text;
+            string password = ComputeSha256Hash(pass);
+     
+
 
             if (ValidateCredentials(username, password))
             {
                 menu menuForm = new menu();
-                menu.Show();
+                //menu.Show();
                 this.Hide();
             }
             else
@@ -46,7 +51,7 @@ namespace POS
 
             try
             {
-                string query = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password";
+                string query = "SELECT COUNT(*) FROM Employees WHERE Username = @username AND PasswordHash = @password";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password); 
@@ -61,6 +66,24 @@ namespace POS
 
             return isValid;
         }
-    
-}
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+        static string ComputeSha256Hash(string rawData)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+    }
+
 }

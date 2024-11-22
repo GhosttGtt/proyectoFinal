@@ -27,7 +27,7 @@ namespace POS.Clases
             {
                 connect.ConnectionString = connectdb;
                 connect.Open();
-                //MessageBox.Show("Conexion exitosa");
+                MessageBox.Show("Conexion exitosa");
             }
             catch (Exception ex)
             {

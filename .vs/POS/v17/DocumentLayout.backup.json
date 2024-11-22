@@ -1,7 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Alejandro\\source\\repos\\proyectoFinal\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\clases\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:clases\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +35,65 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConnectDB.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Clases\\ConnectDB.cs",
+              "RelativeDocumentMoniker": "Clases\\ConnectDB.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Clases\\ConnectDB.cs",
+              "RelativeToolTip": "Clases\\ConnectDB.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAMwB0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T01:21:11.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T01:21:02.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "login.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\login.cs",
+              "RelativeDocumentMoniker": "login.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\login.cs [Dise\u00F1o]",
+              "RelativeToolTip": "login.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T01:17:09.444Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "login.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\login.cs",
+              "RelativeDocumentMoniker": "login.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\login.cs",
+              "RelativeToolTip": "login.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwB8AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T01:10:53.458Z",
+              "EditorCaption": ""
             }
           ]
         }

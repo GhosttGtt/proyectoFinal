@@ -86,3 +86,6 @@ C:\Users\Alejandro\Source\Repos\proyectoFinal\obj\Debug\POS.csproj.CoreCompileIn
 C:\Users\Alejandro\Source\Repos\proyectoFinal\obj\Debug\POS.csproj.Up2Date
 C:\Users\Alejandro\Source\Repos\proyectoFinal\obj\Debug\POS.exe
 C:\Users\Alejandro\Source\Repos\proyectoFinal\obj\Debug\POS.pdb
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\bin\Debug\Guna.UI2.dll
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.login.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.menu.resources
