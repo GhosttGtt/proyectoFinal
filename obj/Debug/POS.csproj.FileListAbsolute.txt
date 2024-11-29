@@ -41,3 +41,89 @@ C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\P
 C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.csproj.Up2Date
 C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.exe
 C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.pdb
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\obj\Debug\POS.csproj.AssemblyReference.cache
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\obj\Debug\POS.Modulo_Productos.resources
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\obj\Debug\POS.Properties.Resources.resources
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\obj\Debug\POS.csproj.GenerateResource.cache
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\obj\Debug\POS.csproj.CoreCompileInputs.cache
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\obj\Debug\POS.exe
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\obj\Debug\POS.pdb
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\POS.exe.config
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\POS.exe
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\POS.pdb
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\Google.Protobuf.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\MySql.Data.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Buffers.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.IO.Pipelines.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Memory.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\ZstdSharp.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\Google.Protobuf.pdb
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\Google.Protobuf.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\MySql.Data.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Buffers.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.IO.Pipelines.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Memory.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final\obj\Debug\POS.csproj.Up2Date
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\POS.exe.config
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\POS.exe
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\POS.pdb
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\Google.Protobuf.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\MySql.Data.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Buffers.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.IO.Pipelines.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Memory.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\ZstdSharp.dll
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\Google.Protobuf.pdb
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\Google.Protobuf.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\MySql.Data.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Buffers.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.IO.Pipelines.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Memory.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\obj\Debug\POS.csproj.AssemblyReference.cache
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\obj\Debug\POS.Modulo_Productos.resources
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\obj\Debug\POS.Properties.Resources.resources
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\obj\Debug\POS.csproj.GenerateResource.cache
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\obj\Debug\POS.csproj.CoreCompileInputs.cache
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\obj\Debug\POS.csproj.Up2Date
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\obj\Debug\POS.exe
+C:\Users\dresc\OneDrive\Escritorio\Proyecto_Final - copia\obj\Debug\POS.pdb
