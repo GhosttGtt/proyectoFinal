@@ -35,10 +35,10 @@ namespace POS.Clases
             return connect;
         }
 
-        public void connectOFF() { 
+        public void connectOFF()
+        {
             connect.Close();
         }
     }
-
 
 }

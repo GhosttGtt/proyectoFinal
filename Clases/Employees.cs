@@ -11,17 +11,17 @@ namespace POS.Clases
 {
     internal class Employees
     {
-        public void mostrarEmpleados(DataGridView tablaEmpleados) {
+        public void mostrarClientes(DataGridView dgvClientes) {
             try {
                 ConnectDB connect = new ConnectDB();
 
                 String query = "SELECT FirstName AS Nombre, LastName AS Apellido, Position AS Puesto FROM Employees";
 
-                tablaEmpleados.DataSource = null;
+                dgvClientes.DataSource = null;
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query,connect.connectON());
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-                tablaEmpleados.DataSource = dt;
+                dgvClientes.DataSource = dt;
                 connect.connectOFF();
             }
             catch (Exception ex)
