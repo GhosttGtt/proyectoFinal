@@ -15,231 +15,146 @@ namespace POS.Forms
 {
     public partial class FormVentas : Form
     {
-        private DataTable carrito;
+        private int? clienteId = null; // Null indica "Consumidor Final"
+        private decimal total = 0;
         public FormVentas()
         {
-            InitializeComponent();            
-            LoadClientes();
-            LoadProductos();
-            InitializeCarrito();
+            InitializeComponent();
+            CargarProductos();
         }
-        private void InitializeCarrito()
-        {
-            carrito = new DataTable();
-            carrito.Columns.Add("ProductID", typeof(int));
-            carrito.Columns.Add("Name", typeof(string));
-            carrito.Columns.Add("Quantity", typeof(int));
-            carrito.Columns.Add("UnitPrice", typeof(decimal));
-            carrito.Columns.Add("TotalPrice", typeof(decimal));
-            dataGridViewCarrito.DataSource = carrito;
-        }
-        private void LoadClientes()
+
+        private void CargarProductos()
         {
             using (var connection = DatabaseHelper.GetConnection())
             {
                 connection.Open();
-                string query = "SELECT CustomerID, CONCAT(FirstName, ' ', LastName) AS FullName FROM Customers";
+                string query = "SELECT ProductID, Name, Price, Stock FROM Products WHERE Stock > 0";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
-                comboBoxClientes.DataSource = table;
-                comboBoxClientes.DisplayMember = "FullName";
-                comboBoxClientes.ValueMember = "CustomerID";
+                dataGridViewProductos.DataSource = table;
             }
         }
 
-
-
-        private void LoadProductos()
+        private void BuscarCliente(string criterio)
         {
             using (var connection = DatabaseHelper.GetConnection())
             {
                 connection.Open();
-                string query = "SELECT ProductID, ImagePath, Name, Price, Stock FROM Products WHERE Stock > 0";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
+                string query = "SELECT CustomerID, CONCAT(FirstName, ' ', LastName) AS Nombre FROM Customers WHERE NIT LIKE @criterio OR FirstName LIKE @criterio";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@criterio", "%" + criterio + "%");
 
-                dataGridViewProductos.DataSource = table;
-
-                if (dataGridViewProductos.Columns["Image"] == null)
+                using (var reader = command.ExecuteReader())
                 {
-                    DataGridViewImageColumn imgColumn = new DataGridViewImageColumn();
-                    imgColumn.Name = "Image";
-                    imgColumn.HeaderText = "Imagen";
-                    imgColumn.ImageLayout = DataGridViewImageCellLayout.NotSet;
-                    dataGridViewProductos.Columns.Add(imgColumn);
-                }
-
-                dataGridViewProductos.Columns["ImagePath"].Visible = false;
-
-                string startupPath = Application.StartupPath;
-                string startupPath2 = Path.GetDirectoryName(startupPath);
-                string basePath = Path.GetDirectoryName(startupPath2) + @"\";
-
-                foreach (DataGridViewRow row in dataGridViewProductos.Rows)
-                {
-
-                    if (row.Cells["ImagePath"].Value != DBNull.Value && row.Cells["ImagePath"].Value != null)
+                    if (reader.Read())
                     {
-                        string imagePath = row.Cells["ImagePath"].Value.ToString();
-                        string fullImagePath = basePath + imagePath;
-
-                        Console.WriteLine(fullImagePath);
-
-                        if (!string.IsNullOrEmpty(fullImagePath) && System.IO.File.Exists(fullImagePath))
-                        {
-                            try
-                            {
-                                row.Cells["Image"].Value = Image.FromFile(fullImagePath);
-                            }
-                            catch (Exception)
-                            {
-                       
-                                row.Cells["Image"].Value = Properties.Resources.DefaultImage;  
-                            }
-                        }
-                        else
-                        {
-                            
-                            row.Cells["Image"].Value = Properties.Resources.DefaultImage; 
-                        }
+                        clienteId = reader.GetInt32("CustomerID");
+                        lblCliente.Text = reader.GetString("Nombre");
                     }
                     else
                     {
-                        
-                        row.Cells["Image"].Value = Properties.Resources.DefaultImage; 
+                        clienteId = null;
+                        lblCliente.Text = "Consumidor Final";
                     }
                 }
             }
         }
 
-
-
-
-
-
-
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            BuscarCliente(txtBuscarCliente.Text);
+        }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
+            if (dataGridViewProductos.SelectedRows.Count > 0)
             {
-                if (dataGridViewProductos.SelectedRows.Count > 0)
-                {
-                    var row = dataGridViewProductos.SelectedRows[0];
-                    int productID = (int)row.Cells["ProductID"].Value;
-                    string name = row.Cells["Name"].Value.ToString();
-                    decimal price = (decimal)row.Cells["Price"].Value;
-                    int quantity = (int)numericUpDownCantidad.Value;
+                var row = dataGridViewProductos.SelectedRows[0];
+                int productId = Convert.ToInt32(row.Cells["ProductID"].Value);
+                string nombre = row.Cells["Name"].Value.ToString();
+                decimal precio = Convert.ToDecimal(row.Cells["Price"].Value);
+                int stock = Convert.ToInt32(row.Cells["Stock"].Value);
 
-                    if (quantity > 0)
-                    {
-                        decimal totalPrice = price * quantity;
-                        carrito.Rows.Add(productID, name, quantity, price, totalPrice);
-                        UpdateTotal();
-                    }
-                    else
-                    {
-                        MessageBox.Show("La cantidad debe ser mayor a 0.");
-                    }
-                }
-            }
-        }
-        private void UpdateTotal()
-        {
-            decimal total = 0;
-            foreach (DataRow row in carrito.Rows)
-            {
-                total += (decimal)row["TotalPrice"];
-            }
-            lblTotal.Text = $"Total: {total:C2}";
-        }
-
-        private void btnRealizarVenta_Click(object sender, EventArgs e)
-        {
-            {
-                if (comboBoxClientes.SelectedValue == null || carrito.Rows.Count == 0)
+                if (stock <= 0)
                 {
-                    MessageBox.Show("Seleccione un cliente y agregue productos al carrito.");
+                    MessageBox.Show("Producto sin stock disponible.");
                     return;
                 }
 
-                using (var connection = DatabaseHelper.GetConnection())
+                dataGridViewCarrito.Rows.Add(productId, nombre, precio, 1, precio);
+                total += precio;
+                lblTotal.Text = $"Total: {total:C}";
+            }
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                using (var transaction = connection.BeginTransaction())
                 {
-                    connection.Open();
-
-                    
-                    using (var transaction = connection.BeginTransaction())
+                    try
                     {
-                        try
+                        // Insertar venta
+                        string insertSaleQuery = "INSERT INTO Sales (SaleDate, CustomerID, EmployeeID, Total) VALUES (NOW(), @CustomerID, @EmployeeID, @Total)";
+                        MySqlCommand saleCommand = new MySqlCommand(insertSaleQuery, connection, transaction);
+
+                        // Si no hay cliente seleccionado, facturar como "Consumidor Final"
+                        if (clienteId.HasValue)
                         {
-                            
-                            string insertVentaQuery = "INSERT INTO Sales (SaleDate, CustomerID, EmployeeID, Total) VALUES (@SaleDate, @CustomerID, @EmployeeID, @Total)";
-                            using (var command = new MySqlCommand(insertVentaQuery, connection, transaction))
-                            {
-                                command.Parameters.AddWithValue("@SaleDate", DateTime.Now);
-                                command.Parameters.AddWithValue("@CustomerID", comboBoxClientes.SelectedValue);
-                                command.Parameters.AddWithValue("@EmployeeID", 1); // Cambiar por ID del usuario actual
-                                command.Parameters.AddWithValue("@Total", carrito.Compute("SUM(TotalPrice)", string.Empty));
-
-                                
-                                command.ExecuteNonQuery();
-
-                               
-                                var saleID = command.LastInsertedId;
-                            
-                            foreach (DataRow row in carrito.Rows)
-                            {
-                                int productID = (int)row["ProductID"];
-                                int quantity = (int)row["Quantity"];
-                                decimal unitPrice = (decimal)row["UnitPrice"];
-
-                               
-                                string insertDetalleQuery = "INSERT INTO SaleDetails (SaleID, ProductID, Quantity, UnitPrice) VALUES (@SaleID, @ProductID, @Quantity, @UnitPrice)";
-                                using (var detalleCommand = new MySqlCommand(insertDetalleQuery, connection, transaction))
-                                {
-                                    detalleCommand.Parameters.AddWithValue("@SaleID", saleID);
-                                    detalleCommand.Parameters.AddWithValue("@ProductID", productID);
-                                    detalleCommand.Parameters.AddWithValue("@Quantity", quantity);
-                                    detalleCommand.Parameters.AddWithValue("@UnitPrice", unitPrice);
-                                    detalleCommand.ExecuteNonQuery();
-                                }
-
-                           
-                                string updateStockQuery = "UPDATE Products SET Stock = Stock - @Quantity WHERE ProductID = @ProductID";
-                                using (var stockCommand = new MySqlCommand(updateStockQuery, connection, transaction))
-                                {
-                                    stockCommand.Parameters.AddWithValue("@Quantity", quantity);
-                                    stockCommand.Parameters.AddWithValue("@ProductID", productID);
-                                    stockCommand.ExecuteNonQuery();
-                                }
-                            }
-
-                          
-                            transaction.Commit();
-                            MessageBox.Show("Venta realizada exitosamente.");
-                            carrito.Clear();
-                            UpdateTotal();
-                            LoadProductos();
+                            saleCommand.Parameters.AddWithValue("@CustomerID", clienteId.Value);
                         }
-                        }
-                        catch (Exception ex)
+                        else
                         {
-                           
-                            transaction.Rollback();
-                            MessageBox.Show($"Error al realizar la venta: {ex.Message}");
+                            saleCommand.Parameters.AddWithValue("@CustomerID", DBNull.Value);
                         }
+
+                        saleCommand.Parameters.AddWithValue("@EmployeeID", 1); // Usuario actual
+                        saleCommand.Parameters.AddWithValue("@Total", total);
+                        saleCommand.ExecuteNonQuery();
+
+                        int saleId = (int)saleCommand.LastInsertedId;
+
+                        // Insertar detalles de la venta
+                        foreach (DataGridViewRow row in dataGridViewCarrito.Rows)
+                        {
+                            int productId = Convert.ToInt32(row.Cells["ProductID"].Value);
+                            int cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
+                            decimal precio = Convert.ToDecimal(row.Cells["Precio"].Value);
+
+                            string insertDetailQuery = "INSERT INTO SaleDetails (SaleID, ProductID, Quantity, UnitPrice) VALUES (@SaleID, @ProductID, @Quantity, @UnitPrice)";
+                            MySqlCommand detailCommand = new MySqlCommand(insertDetailQuery, connection, transaction);
+                            detailCommand.Parameters.AddWithValue("@SaleID", saleId);
+                            detailCommand.Parameters.AddWithValue("@ProductID", productId);
+                            detailCommand.Parameters.AddWithValue("@Quantity", cantidad);
+                            detailCommand.Parameters.AddWithValue("@UnitPrice", precio);
+                            detailCommand.ExecuteNonQuery();
+
+                            // Actualizar stock
+                            string updateStockQuery = "UPDATE Products SET Stock = Stock - @Quantity WHERE ProductID = @ProductID";
+                            MySqlCommand stockCommand = new MySqlCommand(updateStockQuery, connection, transaction);
+                            stockCommand.Parameters.AddWithValue("@Quantity", cantidad);
+                            stockCommand.Parameters.AddWithValue("@ProductID", productId);
+                            stockCommand.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                        MessageBox.Show("Venta registrada con éxito.");
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show($"Error al facturar: {ex.Message}");
                     }
                 }
             }
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
         {
-            this.Close();
-            FormHome menuForm = new FormHome();
-            menuForm.Show();
+
         }
     }
-
 }
