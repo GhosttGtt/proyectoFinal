@@ -36,6 +36,7 @@
             this.lblTotal = new System.Windows.Forms.TextBox();
             this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
             this.command = new MySql.Data.MySqlClient.MySqlCommand();
+            this.btnHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).BeginInit();
@@ -44,7 +45,8 @@
             // dataGridViewCarrito
             // 
             this.dataGridViewCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCarrito.Location = new System.Drawing.Point(12, 39);
+            this.dataGridViewCarrito.Location = new System.Drawing.Point(12, 170);
+            this.dataGridViewCarrito.MultiSelect = false;
             this.dataGridViewCarrito.Name = "dataGridViewCarrito";
             this.dataGridViewCarrito.ReadOnly = true;
             this.dataGridViewCarrito.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -55,7 +57,7 @@
             // comboBoxClientes
             // 
             this.comboBoxClientes.FormattingEnabled = true;
-            this.comboBoxClientes.Location = new System.Drawing.Point(12, 12);
+            this.comboBoxClientes.Location = new System.Drawing.Point(12, 143);
             this.comboBoxClientes.Name = "comboBoxClientes";
             this.comboBoxClientes.Size = new System.Drawing.Size(217, 21);
             this.comboBoxClientes.TabIndex = 1;
@@ -88,7 +90,7 @@
             // 
             // btnRealizarVenta
             // 
-            this.btnRealizarVenta.Location = new System.Drawing.Point(387, 10);
+            this.btnRealizarVenta.Location = new System.Drawing.Point(387, 143);
             this.btnRealizarVenta.Name = "btnRealizarVenta";
             this.btnRealizarVenta.Size = new System.Drawing.Size(145, 23);
             this.btnRealizarVenta.TabIndex = 4;
@@ -117,11 +119,25 @@
             this.command.EnableCaching = false;
             this.command.Transaction = null;
             // 
+            // btnHome
+            // 
+            this.btnHome.BackgroundImage = global::POS.Properties.Resources.iconHome;
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Location = new System.Drawing.Point(640, 12);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(48, 48);
+            this.btnHome.TabIndex = 7;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 450);
+            this.ClientSize = new System.Drawing.Size(700, 600);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.numericUpDownCantidad);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnRealizarVenta);
@@ -129,6 +145,7 @@
             this.Controls.Add(this.dataGridViewProductos);
             this.Controls.Add(this.comboBoxClientes);
             this.Controls.Add(this.dataGridViewCarrito);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVentas";
             this.Text = "FormVentas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarrito)).EndInit();
@@ -149,5 +166,6 @@
         private System.Windows.Forms.TextBox lblTotal;
         private System.Windows.Forms.NumericUpDown numericUpDownCantidad;
         private MySql.Data.MySqlClient.MySqlCommand command;
+        private System.Windows.Forms.Button btnHome;
     }
 }

@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\client\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\client\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\product\\formproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\product\\formproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\client\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\client\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\client\\formclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\client\\formclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\product\\producteditpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\product\\producteditpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +51,82 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormClientes.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.Designer.cs",
+              "RelativeDocumentMoniker": "Forms\\Client\\FormClientes.Designer.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.Designer.cs",
+              "RelativeToolTip": "Forms\\Client\\FormClientes.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T08:55:12.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormClientes.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.cs",
+              "RelativeDocumentMoniker": "Forms\\Client\\FormClientes.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.cs",
+              "RelativeToolTip": "Forms\\Client\\FormClientes.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAowAwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T08:54:08.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormClientes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.cs",
+              "RelativeDocumentMoniker": "Forms\\Client\\FormClientes.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Forms\\Client\\FormClientes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T08:53:58.35Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\FormMenu.cs",
+              "RelativeDocumentMoniker": "Forms\\FormMenu.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\FormMenu.cs",
+              "RelativeToolTip": "Forms\\FormMenu.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAvwB4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T08:53:07.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormProductos.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Product\\FormProductos.cs",
+              "RelativeDocumentMoniker": "Forms\\Product\\FormProductos.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Product\\FormProductos.cs",
+              "RelativeToolTip": "Forms\\Product\\FormProductos.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAwwBYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T08:52:05.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductEditPopup.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Product\\ProductEditPopup.cs",
+              "RelativeDocumentMoniker": "Forms\\Product\\ProductEditPopup.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Product\\ProductEditPopup.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Forms\\Product\\ProductEditPopup.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T08:46:32.983Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

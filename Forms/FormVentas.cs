@@ -233,6 +233,13 @@ namespace POS.Forms
                 }
             }
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormHome menuForm = new FormHome();
+            menuForm.Show();
+        }
     }
 
 }

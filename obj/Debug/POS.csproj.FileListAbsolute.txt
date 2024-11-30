@@ -42,3 +42,15 @@ C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\P
 C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.pdb
 C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.FormVentas.resources
 C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Resource1.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.LoginForm.LoginForm.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.FormHome.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.msg.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.FormMenu.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.FormEmpleados.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.FormHistorial.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.Product.FormPopupProducto.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.Product.ProductEditPopup.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.FormProducto.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.Client.FormClientes.resources

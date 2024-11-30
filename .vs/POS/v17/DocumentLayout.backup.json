@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\clases\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:clases\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\product\\producteditpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\product\\producteditpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,53 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ConnectDB.cs",
-              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Clases\\ConnectDB.cs",
-              "RelativeDocumentMoniker": "Clases\\ConnectDB.cs",
-              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Clases\\ConnectDB.cs",
-              "RelativeToolTip": "Clases\\ConnectDB.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAMwBEAAAArAAAAAAAAAA==",
+              "Title": "ProductEditPopup.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Product\\ProductEditPopup.cs",
+              "RelativeDocumentMoniker": "Forms\\Product\\ProductEditPopup.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Product\\ProductEditPopup.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Forms\\Product\\ProductEditPopup.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T01:21:11.27Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T01:21:02.203Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "login.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\login.cs",
-              "RelativeDocumentMoniker": "login.cs",
-              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\login.cs [Dise\u00F1o]",
-              "RelativeToolTip": "login.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T01:17:09.444Z",
+              "WhenOpened": "2024-11-30T08:46:32.983Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "login.cs",
-              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\login.cs",
-              "RelativeDocumentMoniker": "login.cs",
-              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\login.cs",
-              "RelativeToolTip": "login.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAcwEwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T01:10:53.458Z",
-              "EditorCaption": ""
             }
           ]
         }
