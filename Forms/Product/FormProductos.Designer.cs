@@ -43,7 +43,7 @@
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Location = new System.Drawing.Point(640, 12);
+            this.btnHome.Location = new System.Drawing.Point(652, 12);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(36, 36);
             this.btnHome.TabIndex = 0;
@@ -116,7 +116,7 @@
             this.lblTitleForm.TabIndex = 12;
             this.lblTitleForm.Text = "Productos";
             // 
-            // FormClientes
+            // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,7 +128,7 @@
             this.Controls.Add(this.dataGridViewProductos);
             this.Controls.Add(this.btnHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormClientes";
+            this.Name = "FormProducto";
             this.Text = "FormProductos";
             this.Load += new System.EventHandler(this.FormClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();

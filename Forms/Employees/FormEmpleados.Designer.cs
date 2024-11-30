@@ -1,6 +1,6 @@
-﻿namespace POS.Forms.Client
+﻿namespace POS.Forms
 {
-    partial class FormClientes
+    partial class FormEmpleados
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.lblTitleForm = new System.Windows.Forms.Label();
-            this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.dataGridViewEmpleados = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitleForm
@@ -44,36 +44,23 @@
             this.lblTitleForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lblTitleForm.Location = new System.Drawing.Point(12, 24);
             this.lblTitleForm.Name = "lblTitleForm";
-            this.lblTitleForm.Size = new System.Drawing.Size(77, 24);
-            this.lblTitleForm.TabIndex = 14;
-            this.lblTitleForm.Text = "Clientes";
+            this.lblTitleForm.Size = new System.Drawing.Size(106, 24);
+            this.lblTitleForm.TabIndex = 15;
+            this.lblTitleForm.Text = "Empleados";
+            this.lblTitleForm.Click += new System.EventHandler(this.lblTitleForm_Click);
             // 
-            // dataGridViewClientes
+            // dataGridViewEmpleados
             // 
-            this.dataGridViewClientes.AllowUserToAddRows = false;
-            this.dataGridViewClientes.AllowUserToDeleteRows = false;
-            this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClientes.Location = new System.Drawing.Point(12, 86);
-            this.dataGridViewClientes.Name = "dataGridViewClientes";
-            this.dataGridViewClientes.ReadOnly = true;
-            this.dataGridViewClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewClientes.Size = new System.Drawing.Size(676, 453);
-            this.dataGridViewClientes.TabIndex = 15;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAgregar.Location = new System.Drawing.Point(103, 558);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(161, 30);
-            this.btnAgregar.TabIndex = 16;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.dataGridViewEmpleados.AllowUserToAddRows = false;
+            this.dataGridViewEmpleados.AllowUserToDeleteRows = false;
+            this.dataGridViewEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEmpleados.Location = new System.Drawing.Point(12, 86);
+            this.dataGridViewEmpleados.Name = "dataGridViewEmpleados";
+            this.dataGridViewEmpleados.ReadOnly = true;
+            this.dataGridViewEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewEmpleados.Size = new System.Drawing.Size(676, 457);
+            this.dataGridViewEmpleados.TabIndex = 16;
+            this.dataGridViewEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmpleados_CellContentClick);
             // 
             // btnDelete
             // 
@@ -84,7 +71,7 @@
             this.btnDelete.Location = new System.Drawing.Point(437, 558);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(161, 30);
-            this.btnDelete.TabIndex = 18;
+            this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Borrar";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -99,10 +86,25 @@
             this.btnUpdate.Location = new System.Drawing.Point(270, 558);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(161, 30);
-            this.btnUpdate.TabIndex = 17;
+            this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "Editar";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAgregar.Location = new System.Drawing.Point(103, 558);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(161, 30);
+            this.btnAgregar.TabIndex = 19;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnHome
             // 
@@ -110,24 +112,23 @@
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Location = new System.Drawing.Point(652, 12);
+            this.btnHome.Location = new System.Drawing.Point(640, 12);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(36, 36);
-            this.btnHome.TabIndex = 13;
+            this.btnHome.TabIndex = 2;
             this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click_1);
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(16, 60);
+            this.txtBuscar.Location = new System.Drawing.Point(12, 60);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(273, 20);
-            this.txtBuscar.TabIndex = 19;
+            this.txtBuscar.TabIndex = 22;
             this.txtBuscar.Text = "Buscar";
-            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
-            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged_1);
             // 
-            // FormClientes
+            // FormEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,14 +137,13 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dataGridViewClientes);
+            this.Controls.Add(this.dataGridViewEmpleados);
             this.Controls.Add(this.lblTitleForm);
             this.Controls.Add(this.btnHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormClientes";
-            this.Text = "FormClientes";
-            this.Load += new System.EventHandler(this.FormClientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
+            this.Name = "FormEmpleados";
+            this.Text = "FormEmpleados";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,12 +151,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblTitleForm;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.DataGridView dataGridViewClientes;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label lblTitleForm;
+        private System.Windows.Forms.DataGridView dataGridViewEmpleados;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtBuscar;
     }
 }

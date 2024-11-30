@@ -54,3 +54,5 @@ C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\P
 C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.Product.ProductEditPopup.resources
 C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.FormProducto.resources
 C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.Client.FormClientes.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.Client.ClientePopup.resources
+C:\Users\Alex\OneDrive\Documentos\USPG\SemestreII\ProgramacionII\ProyectoFinal\POS\obj\Debug\POS.Forms.Employees.EmpleadoPopup.resources

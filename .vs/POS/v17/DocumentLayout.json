@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\employees\\formempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\employees\\formempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\client\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\client\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\employees\\formempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\employees\\formempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\product\\formproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\product\\formproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\employees\\empleadopopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\employees\\empleadopopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\employees\\empleadopopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\employees\\empleadopopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\client\\clientepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\client\\clientepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\client\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\client\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\client\\formclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\client\\formclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\client\\clientepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\client\\clientepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\product\\producteditpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\product\\producteditpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\client\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\client\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|c:\\users\\alex\\onedrive\\documentos\\uspg\\semestreii\\programacionii\\proyectofinal\\pos\\forms\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4385F64E-CAC1-4A7E-BF95-708BF41E2785}|POS.csproj|solutionrelative:forms\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,32 +67,94 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "FormClientes.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.Designer.cs",
-              "RelativeDocumentMoniker": "Forms\\Client\\FormClientes.Designer.cs",
-              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.Designer.cs",
-              "RelativeToolTip": "Forms\\Client\\FormClientes.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Title": "ClientePopup.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\ClientePopup.cs",
+              "RelativeDocumentMoniker": "Forms\\Client\\ClientePopup.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\ClientePopup.cs",
+              "RelativeToolTip": "Forms\\Client\\ClientePopup.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAcwDUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T08:55:12.041Z",
+              "WhenOpened": "2024-11-30T10:23:15.961Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "EmpleadoPopup.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Employees\\EmpleadoPopup.cs",
+              "RelativeDocumentMoniker": "Forms\\Employees\\EmpleadoPopup.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Employees\\EmpleadoPopup.cs",
+              "RelativeToolTip": "Forms\\Employees\\EmpleadoPopup.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAkwD4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T09:55:41.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmpleadoPopup.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Employees\\EmpleadoPopup.cs",
+              "RelativeDocumentMoniker": "Forms\\Employees\\EmpleadoPopup.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Employees\\EmpleadoPopup.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Forms\\Employees\\EmpleadoPopup.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T09:47:39.178Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormEmpleados.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Employees\\FormEmpleados.cs",
+              "RelativeDocumentMoniker": "Forms\\Employees\\FormEmpleados.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Employees\\FormEmpleados.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Forms\\Employees\\FormEmpleados.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T09:39:26.515Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "FormClientes.cs",
               "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.cs",
               "RelativeDocumentMoniker": "Forms\\Client\\FormClientes.cs",
               "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.cs",
               "RelativeToolTip": "Forms\\Client\\FormClientes.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAowAwAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAUwDQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T08:54:08.785Z",
+              "WhenOpened": "2024-11-30T09:11:06.191Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "FormEmpleados.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Employees\\FormEmpleados.cs",
+              "RelativeDocumentMoniker": "Forms\\Employees\\FormEmpleados.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Employees\\FormEmpleados.cs",
+              "RelativeToolTip": "Forms\\Employees\\FormEmpleados.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAUwEEAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T09:34:36.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClientePopup.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\ClientePopup.cs",
+              "RelativeDocumentMoniker": "Forms\\Client\\ClientePopup.cs",
+              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\ClientePopup.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Forms\\Client\\ClientePopup.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T09:03:01.292Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "FormClientes.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Client\\FormClientes.cs",
               "RelativeDocumentMoniker": "Forms\\Client\\FormClientes.cs",
@@ -92,41 +166,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "FormMenu.cs",
               "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\FormMenu.cs",
               "RelativeDocumentMoniker": "Forms\\FormMenu.cs",
               "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\FormMenu.cs",
               "RelativeToolTip": "Forms\\FormMenu.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAvwB4AAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAIwBsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T08:53:07.147Z",
+              "WhenOpened": "2024-11-30T09:22:59.162Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormProductos.cs",
-              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Product\\FormProductos.cs",
-              "RelativeDocumentMoniker": "Forms\\Product\\FormProductos.cs",
-              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Product\\FormProductos.cs",
-              "RelativeToolTip": "Forms\\Product\\FormProductos.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAwwBYAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T08:52:05.543Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProductEditPopup.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Product\\ProductEditPopup.cs",
-              "RelativeDocumentMoniker": "Forms\\Product\\ProductEditPopup.cs",
-              "ToolTip": "C:\\Users\\Alex\\OneDrive\\Documentos\\USPG\\SemestreII\\ProgramacionII\\ProyectoFinal\\POS\\Forms\\Product\\ProductEditPopup.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Forms\\Product\\ProductEditPopup.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T08:46:32.983Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

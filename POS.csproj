@@ -103,16 +103,28 @@
   <ItemGroup>
     <Compile Include="Database\DatabaseHelper.cs" />
     <Compile Include="Database\POS_Queries.cs" />
+    <Compile Include="Forms\Client\ClientePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Client\ClientePopup.Designer.cs">
+      <DependentUpon>ClientePopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Client\FormClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Client\FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEmpleados.cs">
+    <Compile Include="Forms\Employees\EmpleadoPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEmpleados.Designer.cs">
+    <Compile Include="Forms\Employees\EmpleadoPopup.Designer.cs">
+      <DependentUpon>EmpleadoPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employees\FormEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employees\FormEmpleados.Designer.cs">
       <DependentUpon>FormEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormHistorial.cs">
@@ -180,10 +192,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Client\ClientePopup.resx">
+      <DependentUpon>ClientePopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Client\FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEmpleados.resx">
+    <EmbeddedResource Include="Forms\Employees\EmpleadoPopup.resx">
+      <DependentUpon>EmpleadoPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employees\FormEmpleados.resx">
       <DependentUpon>FormEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHistorial.resx">
