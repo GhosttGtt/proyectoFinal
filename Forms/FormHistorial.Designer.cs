@@ -34,6 +34,7 @@
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.lblTitleForm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Location = new System.Drawing.Point(640, 12);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(48, 48);
+            this.btnHome.Size = new System.Drawing.Size(36, 36);
             this.btnHome.TabIndex = 3;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -53,41 +54,55 @@
             // dataGridViewSales
             // 
             this.dataGridViewSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSales.Location = new System.Drawing.Point(12, 110);
+            this.dataGridViewSales.Location = new System.Drawing.Point(12, 95);
             this.dataGridViewSales.Name = "dataGridViewSales";
-            this.dataGridViewSales.Size = new System.Drawing.Size(676, 478);
+            this.dataGridViewSales.Size = new System.Drawing.Size(676, 493);
             this.dataGridViewSales.TabIndex = 4;
             // 
             // dateTimePickerStart
             // 
-            this.dateTimePickerStart.Location = new System.Drawing.Point(12, 84);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(12, 62);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerStart.TabIndex = 6;
             // 
             // dateTimePickerEnd
             // 
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(218, 84);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(218, 62);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerEnd.TabIndex = 7;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(424, 84);
+            this.txtSearch.Location = new System.Drawing.Point(424, 62);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.Size = new System.Drawing.Size(183, 20);
             this.txtSearch.TabIndex = 8;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(530, 82);
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSearch.Location = new System.Drawing.Point(613, 59);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(75, 30);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Buscar";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // lblTitleForm
+            // 
+            this.lblTitleForm.AutoSize = true;
+            this.lblTitleForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblTitleForm.Location = new System.Drawing.Point(12, 24);
+            this.lblTitleForm.Name = "lblTitleForm";
+            this.lblTitleForm.Size = new System.Drawing.Size(162, 24);
+            this.lblTitleForm.TabIndex = 13;
+            this.lblTitleForm.Text = "Historial de ventas";
             // 
             // FormHistorial
             // 
@@ -95,6 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(700, 600);
+            this.Controls.Add(this.lblTitleForm);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dateTimePickerEnd);
@@ -119,5 +135,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblTitleForm;
     }
 }

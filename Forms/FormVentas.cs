@@ -26,14 +26,50 @@ namespace POS.Forms
         {
             InitializeComponent();
             this.Load += FormVentas_Load;
+            LoadEmployees();
+            this.txtSearchProduct = new System.Windows.Forms.TextBox(); this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
+
+        }
+        private void LoadEmployees()
+        {
+            // Limpiar el ComboBox antes de llenarlo
+            cmbEmployees.Items.Clear();
+
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+
+                // Obtener la lista de empleados
+                string query = "SELECT EmployeeID, CONCAT(FirstName, ' ', LastName) AS FullName FROM Employees";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                // Llenar el ComboBox con los empleados
+                while (reader.Read())
+                {
+                    cmbEmployees.Items.Add(new KeyValuePair<int, string>(
+                        reader.GetInt32("EmployeeID"),
+                        reader.GetString("FullName")
+                    ));
+                }
+
+                // Establecer un valor predeterminado (si es necesario)
+                if (cmbEmployees.Items.Count > 0)
+                {
+                    cmbEmployees.SelectedIndex = 0;
+                }
+            }
         }
         private void FormVentas_Load(object sender, EventArgs e)
         {
-            ConfigureDataGridView();
+            
+            ConfigureCartDataGridView();
+            InitializeCartGridView();
             SearchProducts("");
+
         }
         
-        private void ConfigureDataGridView()
+        private void InitializeCartGridView()
         {
             dataGridViewProducts.Columns.Clear(); // Limpia columnas anteriores, si existen.
             dataGridViewProducts.Columns.Add("ProductID", "ID");
@@ -41,6 +77,56 @@ namespace POS.Forms
             dataGridViewProducts.Columns.Add("Price", "Precio");
             dataGridViewProducts.Columns.Add("Stock", "Stock");
             dataGridViewProducts.Columns.Add("ImagePath", "Ruta de Imagen");
+        }
+        private void ConfigureCartDataGridView()
+        {
+            dataGridViewCart.Columns.Clear(); // Limpia columnas anteriores.
+            dataGridViewCart.Columns.Add("ProductID", "ID");
+            dataGridViewCart.Columns.Add("Name", "Producto");
+            dataGridViewCart.Columns.Add("Price", "Precio");
+            dataGridViewCart.Columns.Add("Quantity", "Cantidad");
+            dataGridViewCart.Columns.Add("Total", "Total");
+
+            // Asegúrate de que no se agreguen filas automáticamente.
+            dataGridViewCart.AutoGenerateColumns = false;
+        }
+        private void txtSearchProduct_TextChanged(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearchProduct.Text.Trim();
+
+            // Si no hay texto en el campo de búsqueda, cargamos todos los productos
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                LoadProducts();
+                return;
+            }
+
+            // Filtramos productos por ID o nombre
+            SearchProducts(searchTerm);
+        }
+        private void LoadProducts()
+        {
+            try
+            {
+                using (var connection = DatabaseHelper.GetConnection())
+                {
+                    connection.Open();
+
+                    connection.Open();
+                    string sql = "SELECT ProductID, Name, Price, Stock, ImagePath FROM Products WHERE Name LIKE @Query OR ProductID LIKE @Query";
+                    MySqlCommand command = new MySqlCommand(sql, connection);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    // Asignamos el DataTable al DataGridView
+                    dataGridViewProducts.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void SearchProducts(string query)
         {
@@ -67,7 +153,7 @@ namespace POS.Forms
                 }
             }
         }
-        private void AddToCart(int productID)
+        private void AddToCart(int productID, int quantity)
         {
             using (var connection = DatabaseHelper.GetConnection())
             {
@@ -82,9 +168,10 @@ namespace POS.Forms
                 {
                     int stock = reader.GetInt32("Stock");
 
-                    if (stock > 0)
+                    // Verifica que haya suficiente stock
+                    if (stock >= quantity)
                     {
-                        Product product = new Product
+                        Models.Product product = new Models.Product
                         {
                             ProductID = reader.GetInt32("ProductID"),
                             Name = reader.GetString("Name"),
@@ -93,34 +180,90 @@ namespace POS.Forms
                             ImagePath = reader.GetString("ImagePath")
                         };
 
-                        cart.Add(product);
-                        total += product.Price;
+                        // Verifica si el producto ya está en el carrito
+                        var existingProduct = cart.FirstOrDefault(item => item.ProductID == product.ProductID);
+
+                        if (existingProduct != null)
+                        {
+                            // Si el producto ya está en el carrito, actualiza la cantidad
+                            existingProduct.Quantity += quantity;
+                        }
+                        else
+                        {
+                            // Si el producto no está en el carrito, agrégalo con la cantidad seleccionada
+                            product.Quantity = quantity;
+                            cart.Add(product);
+                        }
+
+                        // Actualiza el total acumulado del carrito
+                        total += product.Price * quantity;
 
                         UpdateCartView();
                     }
                     else
                     {
-                        MessageBox.Show("El producto está agotado.");
+                        MessageBox.Show("No hay suficiente stock disponible.");
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Producto no encontrado.");
+                }
+            }
+        }
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            // Verifica que se haya seleccionado una fila en el DataGridView
+            if (dataGridViewCart.SelectedRows.Count > 0)
+            {
+                // Obtiene el ID del producto de la fila seleccionada
+                int productID = Convert.ToInt32(dataGridViewCart.SelectedRows[0].Cells[0].Value);
+
+                // Busca el producto en el carrito
+                var productToRemove = cart.FirstOrDefault(p => p.ProductID == productID);
+
+                if (productToRemove != null)
+                {
+                    // Elimina el producto del carrito
+                    cart.Remove(productToRemove);
+
+                    // Actualiza el total del carrito
+                    total -= productToRemove.Price * productToRemove.Quantity;
+
+                    // Actualiza la vista del carrito
+                    UpdateCartView();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un producto para eliminar.");
             }
         }
         private void UpdateCartView()
         {
             dataGridViewCart.Rows.Clear();
 
-            foreach (var product in cart)
+            if (cart == null || cart.Count == 0)
             {
-                Image image = null;
-                if (File.Exists(product.ImagePath))
-                {
-                    image = Image.FromFile(product.ImagePath);
-                }
-
-                dataGridViewCart.Rows.Add(product.ProductID, product.Name, product.Price, image);
+                lblTotal.Text = "Total: $0.00";
+                return;
             }
 
-            lblTotal.Text = "Total: Q" + total.ToString("0.00");
+            foreach (var item in cart)
+            {
+                if (item == null) continue;
+
+                dataGridViewCart.Rows.Add(
+                    item.ProductID,
+                    item.Name ?? "N/A",
+                    item.Price.ToString("C"),
+                    item.Quantity,
+                    (item.Price * item.Quantity).ToString("C")
+                );
+            }
+
+            decimal total = cart.Sum(item => item?.Price * item?.Quantity ?? 0);
+            lblTotal.Text = $"Total: {total:C}";
         }
 
         private void PerformSale(string nit)
@@ -135,40 +278,104 @@ namespace POS.Forms
             {
                 connection.Open();
 
-                // Insertar la venta
-                string insertSaleQuery = "INSERT INTO Sales (CustomerNIT, SaleDate, Total) VALUES (@CustomerNIT, @SaleDate, @Total)";
-                MySqlCommand command = new MySqlCommand(insertSaleQuery, connection);
-                command.Parameters.AddWithValue("@CustomerNIT", nit);
-                command.Parameters.AddWithValue("@SaleDate", DateTime.Now);
-                command.Parameters.AddWithValue("@Total", total);
+                // Iniciar una transacción
+                MySqlTransaction transaction = connection.BeginTransaction();
 
-                command.ExecuteNonQuery();
-                int saleID = (int)command.LastInsertedId;
-
-                // Insertar los detalles de la venta
-                foreach (var product in cart)
+                try
                 {
-                    string insertSaleDetailQuery = "INSERT INTO SaleDetails (SaleID, ProductID, Quantity, UnitPrice) VALUES (@SaleID, @ProductID, @Quantity, @UnitPrice)";
-                    MySqlCommand detailCommand = new MySqlCommand(insertSaleDetailQuery, connection);
-                    detailCommand.Parameters.AddWithValue("@SaleID", saleID);
-                    detailCommand.Parameters.AddWithValue("@ProductID", product.ProductID);
-                    detailCommand.Parameters.AddWithValue("@Quantity", 1);
-                    detailCommand.Parameters.AddWithValue("@UnitPrice", product.Price);
+                    int customerID;
 
-                    detailCommand.ExecuteNonQuery();
+                    // Verificar si es venta a cliente CF
+                    if (nit.ToUpper() == "CF")
+                    {
+                        
+                        string getCFQuery = "SELECT CustomerID FROM Customers WHERE NIT = 'CF'";
+                        MySqlCommand getCFCommand = new MySqlCommand(getCFQuery, connection);
+                        object cfIDObj = getCFCommand.ExecuteScalar();
 
-                    // Actualizar el inventario
-                    string updateStockQuery = "UPDATE Products SET Stock = Stock - 1 WHERE ProductID = @ProductID";
-                    MySqlCommand updateCommand = new MySqlCommand(updateStockQuery, connection);
-                    updateCommand.Parameters.AddWithValue("@ProductID", product.ProductID);
+                        if (cfIDObj == null)
+                        {
+                            MessageBox.Show("El cliente CF no está registrado en la base de datos.");
+                            return;
+                        }
 
-                    updateCommand.ExecuteNonQuery();
+                        customerID = Convert.ToInt32(cfIDObj);
+                    }
+                    else
+                    {
+                        // Obtener el CustomerID del cliente basado en el NIT ingresado
+                        string getCustomerQuery = "SELECT CustomerID FROM Customers WHERE NIT = @NIT";
+                        MySqlCommand getCustomerCommand = new MySqlCommand(getCustomerQuery, connection);
+                        getCustomerCommand.Parameters.AddWithValue("@NIT", nit);
+                        object customerIDObj = getCustomerCommand.ExecuteScalar();
+
+                        if (customerIDObj == null)
+                        {
+                            MessageBox.Show("Cliente no encontrado. Por favor, registre al cliente antes de continuar.");
+                            return; // Salir si el cliente no existe
+                        }
+
+                        customerID = Convert.ToInt32(customerIDObj);
+                    }
+
+                    // Obtener el EmployeeID del ComboBox
+                    if (cmbEmployees.SelectedItem == null)
+                    {
+                        MessageBox.Show("Seleccione un empleado.");
+                        return;
+                    }
+
+                    var selectedEmployee = (KeyValuePair<int, string>)cmbEmployees.SelectedItem;
+                    int employeeID = selectedEmployee.Key;
+
+                    // Insertar la venta
+                    string insertSaleQuery = "INSERT INTO Sales (CustomerID, SaleDate, Total, EmployeeID) VALUES (@CustomerID, @SaleDate, @Total, @EmployeeID)";
+                    MySqlCommand command = new MySqlCommand(insertSaleQuery, connection, transaction);
+                    command.Parameters.AddWithValue("@CustomerID", customerID);
+                    command.Parameters.AddWithValue("@SaleDate", DateTime.Now);
+                    command.Parameters.AddWithValue("@Total", total);
+                    command.Parameters.AddWithValue("@EmployeeID", employeeID);
+
+                    command.ExecuteNonQuery();
+                    int saleID = (int)command.LastInsertedId;
+
+                    // Insertar los detalles de la venta
+                    foreach (var product in cart)
+                    {
+                        string insertSaleDetailQuery = "INSERT INTO SaleDetails (SaleID, ProductID, Quantity, UnitPrice) VALUES (@SaleID, @ProductID, @Quantity, @UnitPrice)";
+                        MySqlCommand detailCommand = new MySqlCommand(insertSaleDetailQuery, connection, transaction);
+                        detailCommand.Parameters.AddWithValue("@SaleID", saleID);
+                        detailCommand.Parameters.AddWithValue("@ProductID", product.ProductID);
+                        detailCommand.Parameters.AddWithValue("@Quantity", product.Quantity); // Usar la cantidad en el carrito
+                        detailCommand.Parameters.AddWithValue("@UnitPrice", product.Price);
+
+                        detailCommand.ExecuteNonQuery();
+
+                        // Actualizar el inventario
+                        string updateStockQuery = "UPDATE Products SET Stock = Stock - @Quantity WHERE ProductID = @ProductID";
+                        MySqlCommand updateCommand = new MySqlCommand(updateStockQuery, connection, transaction);
+                        updateCommand.Parameters.AddWithValue("@Quantity", product.Quantity);
+                        updateCommand.Parameters.AddWithValue("@ProductID", product.ProductID);
+
+                        updateCommand.ExecuteNonQuery();
+                    }
+
+                    // Confirmar la transacción
+                    transaction.Commit();
+
+                    MessageBox.Show("Venta realizada exitosamente.");
+                    ResetForm();
                 }
-
-                MessageBox.Show("Venta realizada exitosamente.");
-                ResetForm();
+                catch (Exception ex)
+                {
+                    // Si ocurre un error, revertir la transacción
+                    transaction.Rollback();
+                    MessageBox.Show("Error al realizar la venta: " + ex.Message);
+                }
             }
         }
+
+
 
         private void ResetForm()
         {
@@ -179,23 +386,33 @@ namespace POS.Forms
             txtCustomerNIT.Clear();
         }
 
-        private void txtSearchProduct_TextChanged(object sender, EventArgs e)
-        {
-            string query = txtSearchProduct.Text.Trim();
-            SearchProducts(query);
-        }
+      
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
+            
+            // Verifica que un producto esté seleccionado en el DataGridView
             if (dataGridViewProducts.SelectedRows.Count > 0)
             {
                 int productID = Convert.ToInt32(dataGridViewProducts.SelectedRows[0].Cells[0].Value);
-                AddToCart(productID);
+
+                // Verifica si la cantidad ingresada es válida
+                if (int.TryParse(txtQuantity.Text, out int quantity) && quantity > 0)
+                {
+                    // Llama a la función AddToCart y pasa la cantidad
+                    AddToCart(productID, quantity);
+                    txtQuantity.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese una cantidad válida mayor que 0.");
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione un producto para agregar.");
             }
+            
         }
 
         private void btnPerformSale_Click(object sender, EventArgs e)
@@ -218,6 +435,11 @@ namespace POS.Forms
 
         }
 
-        
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormHome menuForm = new FormHome();
+            menuForm.Show();
+        }
     }
 }

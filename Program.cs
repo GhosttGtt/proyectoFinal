@@ -18,6 +18,6 @@ namespace POS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenu(1));      }
+            Application.Run(new LoginForm());      }
     }
 }
