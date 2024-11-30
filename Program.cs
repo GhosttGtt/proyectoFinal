@@ -1,4 +1,5 @@
 ﻿using POS.Forms;
+using POS.Forms.LoginForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,11 @@ namespace POS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new FormEmployees());
         }
+=======
+            Application.Run(new FormMenu(1));      }
+>>>>>>> master
     }
 }

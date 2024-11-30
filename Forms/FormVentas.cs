@@ -10,229 +10,214 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using POS.Database;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace POS.Forms
 {
+    
     public partial class FormVentas : Form
     {
-        private DataTable carrito;
+        private List<Models.Product> cart = new List<Models.Product>(); // Lista de productos en el carrito.
+        private decimal total = 0; // Total acumulado.
+
+        private int? clienteId = null; // Null indica "Consumidor Final"
+       
         public FormVentas()
         {
-            InitializeComponent();            
-            LoadClientes();
-            LoadProductos();
-            InitializeCarrito();
+            InitializeComponent();
+            this.Load += FormVentas_Load;
         }
-        private void InitializeCarrito()
+        private void FormVentas_Load(object sender, EventArgs e)
         {
-            carrito = new DataTable();
-            carrito.Columns.Add("ProductID", typeof(int));
-            carrito.Columns.Add("Name", typeof(string));
-            carrito.Columns.Add("Quantity", typeof(int));
-            carrito.Columns.Add("UnitPrice", typeof(decimal));
-            carrito.Columns.Add("TotalPrice", typeof(decimal));
-            dataGridViewCarrito.DataSource = carrito;
+            ConfigureDataGridView();
+            SearchProducts("");
         }
-        private void LoadClientes()
+        
+        private void ConfigureDataGridView()
         {
-            using (var connection = DatabaseHelper.GetConnection())
-            {
-                connection.Open();
-                string query = "SELECT CustomerID, CONCAT(FirstName, ' ', LastName) AS FullName FROM Customers";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                comboBoxClientes.DataSource = table;
-                comboBoxClientes.DisplayMember = "FullName";
-                comboBoxClientes.ValueMember = "CustomerID";
-            }
+            dataGridViewProducts.Columns.Clear(); // Limpia columnas anteriores, si existen.
+            dataGridViewProducts.Columns.Add("ProductID", "ID");
+            dataGridViewProducts.Columns.Add("Name", "Nombre");
+            dataGridViewProducts.Columns.Add("Price", "Precio");
+            dataGridViewProducts.Columns.Add("Stock", "Stock");
+            dataGridViewProducts.Columns.Add("ImagePath", "Ruta de Imagen");
         }
-
-
-
-        private void LoadProductos()
+        private void SearchProducts(string query)
         {
             using (var connection = DatabaseHelper.GetConnection())
             {
                 connection.Open();
-                string query = "SELECT ProductID, ImagePath, Name, Price, Stock FROM Products WHERE Stock > 0";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
+                string sql = "SELECT ProductID, Name, Price, Stock, ImagePath FROM Products WHERE Name LIKE @Query OR ProductID LIKE @Query";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@Query", "%" + query + "%"); // Búsqueda parcial.
 
-                dataGridViewProductos.DataSource = table;
+                MySqlDataReader reader = command.ExecuteReader();
+                dataGridViewProducts.Rows.Clear(); // Limpia resultados anteriores.
 
-                if (dataGridViewProductos.Columns["Image"] == null)
+                while (reader.Read())
                 {
-                    DataGridViewImageColumn imgColumn = new DataGridViewImageColumn();
-                    imgColumn.Name = "Image";
-                    imgColumn.HeaderText = "Imagen";
-                    imgColumn.ImageLayout = DataGridViewImageCellLayout.NotSet;
-                    dataGridViewProductos.Columns.Add(imgColumn);
+                    int productID = reader.GetInt32("ProductID");
+                    string name = reader.GetString("Name");
+                    decimal price = reader.GetDecimal("Price");
+                    int stock = reader.GetInt32("Stock");
+                    string imagePath = reader.GetString("ImagePath");
+
+                    // Agrega una fila con los datos recuperados.
+                    dataGridViewProducts.Rows.Add(productID, name, price, stock, imagePath);
                 }
+            }
+        }
+        private void AddToCart(int productID)
+        {
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                string sql = "SELECT ProductID, Name, Price, Stock, ImagePath FROM Products WHERE ProductID = @ProductID";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@ProductID", productID);
 
-                dataGridViewProductos.Columns["ImagePath"].Visible = false;
+                MySqlDataReader reader = command.ExecuteReader();
 
-                string startupPath = Application.StartupPath;
-                string startupPath2 = Path.GetDirectoryName(startupPath);
-                string basePath = Path.GetDirectoryName(startupPath2) + @"\";
-
-                foreach (DataGridViewRow row in dataGridViewProductos.Rows)
+                if (reader.Read())
                 {
+                    int stock = reader.GetInt32("Stock");
 
-                    if (row.Cells["ImagePath"].Value != DBNull.Value && row.Cells["ImagePath"].Value != null)
+                    if (stock > 0)
                     {
-                        string imagePath = row.Cells["ImagePath"].Value.ToString();
-                        string fullImagePath = basePath + imagePath;
-
-                        Console.WriteLine(fullImagePath);
-
-                        if (!string.IsNullOrEmpty(fullImagePath) && System.IO.File.Exists(fullImagePath))
+                        Product product = new Product
                         {
-                            try
-                            {
-                                row.Cells["Image"].Value = Image.FromFile(fullImagePath);
-                            }
-                            catch (Exception)
-                            {
-                       
-                                row.Cells["Image"].Value = Properties.Resources.DefaultImage;  
-                            }
-                        }
-                        else
-                        {
-                            
-                            row.Cells["Image"].Value = Properties.Resources.DefaultImage; 
-                        }
+                            ProductID = reader.GetInt32("ProductID"),
+                            Name = reader.GetString("Name"),
+                            Price = reader.GetDecimal("Price"),
+                            Stock = reader.GetInt32("Stock"),
+                            ImagePath = reader.GetString("ImagePath")
+                        };
+
+                        cart.Add(product);
+                        total += product.Price;
+
+                        UpdateCartView();
                     }
                     else
                     {
-                        
-                        row.Cells["Image"].Value = Properties.Resources.DefaultImage; 
+                        MessageBox.Show("El producto está agotado.");
                     }
                 }
             }
         }
-
-
-
-
-
-
-
-
-        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        private void UpdateCartView()
         {
-            {
-                if (dataGridViewProductos.SelectedRows.Count > 0)
-                {
-                    var row = dataGridViewProductos.SelectedRows[0];
-                    int productID = (int)row.Cells["ProductID"].Value;
-                    string name = row.Cells["Name"].Value.ToString();
-                    decimal price = (decimal)row.Cells["Price"].Value;
-                    int quantity = (int)numericUpDownCantidad.Value;
+            dataGridViewCart.Rows.Clear();
 
-                    if (quantity > 0)
-                    {
-                        decimal totalPrice = price * quantity;
-                        carrito.Rows.Add(productID, name, quantity, price, totalPrice);
-                        UpdateTotal();
-                    }
-                    else
-                    {
-                        MessageBox.Show("La cantidad debe ser mayor a 0.");
-                    }
+            foreach (var product in cart)
+            {
+                Image image = null;
+                if (File.Exists(product.ImagePath))
+                {
+                    image = Image.FromFile(product.ImagePath);
                 }
+
+                dataGridViewCart.Rows.Add(product.ProductID, product.Name, product.Price, image);
             }
+
+            lblTotal.Text = "Total: Q" + total.ToString("0.00");
         }
-        private void UpdateTotal()
+
+        private void PerformSale(string nit)
         {
-            decimal total = 0;
-            foreach (DataRow row in carrito.Rows)
+            if (cart.Count == 0)
             {
-                total += (decimal)row["TotalPrice"];
+                MessageBox.Show("El carrito está vacío.");
+                return;
             }
-            lblTotal.Text = $"Total: {total:C2}";
+
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+
+                // Insertar la venta
+                string insertSaleQuery = "INSERT INTO Sales (CustomerNIT, SaleDate, Total) VALUES (@CustomerNIT, @SaleDate, @Total)";
+                MySqlCommand command = new MySqlCommand(insertSaleQuery, connection);
+                command.Parameters.AddWithValue("@CustomerNIT", nit);
+                command.Parameters.AddWithValue("@SaleDate", DateTime.Now);
+                command.Parameters.AddWithValue("@Total", total);
+
+                command.ExecuteNonQuery();
+                int saleID = (int)command.LastInsertedId;
+
+                // Insertar los detalles de la venta
+                foreach (var product in cart)
+                {
+                    string insertSaleDetailQuery = "INSERT INTO SaleDetails (SaleID, ProductID, Quantity, UnitPrice) VALUES (@SaleID, @ProductID, @Quantity, @UnitPrice)";
+                    MySqlCommand detailCommand = new MySqlCommand(insertSaleDetailQuery, connection);
+                    detailCommand.Parameters.AddWithValue("@SaleID", saleID);
+                    detailCommand.Parameters.AddWithValue("@ProductID", product.ProductID);
+                    detailCommand.Parameters.AddWithValue("@Quantity", 1);
+                    detailCommand.Parameters.AddWithValue("@UnitPrice", product.Price);
+
+                    detailCommand.ExecuteNonQuery();
+
+                    // Actualizar el inventario
+                    string updateStockQuery = "UPDATE Products SET Stock = Stock - 1 WHERE ProductID = @ProductID";
+                    MySqlCommand updateCommand = new MySqlCommand(updateStockQuery, connection);
+                    updateCommand.Parameters.AddWithValue("@ProductID", product.ProductID);
+
+                    updateCommand.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Venta realizada exitosamente.");
+                ResetForm();
+            }
         }
 
-        private void btnRealizarVenta_Click(object sender, EventArgs e)
+        private void ResetForm()
         {
+            cart.Clear();
+            total = 0;
+            UpdateCartView();
+            txtSearchProduct.Clear();
+            txtCustomerNIT.Clear();
+        }
+
+        private void txtSearchProduct_TextChanged(object sender, EventArgs e)
+        {
+            string query = txtSearchProduct.Text.Trim();
+            SearchProducts(query);
+        }
+
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewProducts.SelectedRows.Count > 0)
             {
-                if (comboBoxClientes.SelectedValue == null || carrito.Rows.Count == 0)
-                {
-                    MessageBox.Show("Seleccione un cliente y agregue productos al carrito.");
-                    return;
-                }
-
-                using (var connection = DatabaseHelper.GetConnection())
-                {
-                    connection.Open();
-
-                    
-                    using (var transaction = connection.BeginTransaction())
-                    {
-                        try
-                        {
-                            
-                            string insertVentaQuery = "INSERT INTO Sales (SaleDate, CustomerID, EmployeeID, Total) VALUES (@SaleDate, @CustomerID, @EmployeeID, @Total)";
-                            using (var command = new MySqlCommand(insertVentaQuery, connection, transaction))
-                            {
-                                command.Parameters.AddWithValue("@SaleDate", DateTime.Now);
-                                command.Parameters.AddWithValue("@CustomerID", comboBoxClientes.SelectedValue);
-                                command.Parameters.AddWithValue("@EmployeeID", 1); // Cambiar por ID del usuario actual
-                                command.Parameters.AddWithValue("@Total", carrito.Compute("SUM(TotalPrice)", string.Empty));
-
-                                
-                                command.ExecuteNonQuery();
-
-                               
-                                var saleID = command.LastInsertedId;
-                            
-                            foreach (DataRow row in carrito.Rows)
-                            {
-                                int productID = (int)row["ProductID"];
-                                int quantity = (int)row["Quantity"];
-                                decimal unitPrice = (decimal)row["UnitPrice"];
-
-                               
-                                string insertDetalleQuery = "INSERT INTO SaleDetails (SaleID, ProductID, Quantity, UnitPrice) VALUES (@SaleID, @ProductID, @Quantity, @UnitPrice)";
-                                using (var detalleCommand = new MySqlCommand(insertDetalleQuery, connection, transaction))
-                                {
-                                    detalleCommand.Parameters.AddWithValue("@SaleID", saleID);
-                                    detalleCommand.Parameters.AddWithValue("@ProductID", productID);
-                                    detalleCommand.Parameters.AddWithValue("@Quantity", quantity);
-                                    detalleCommand.Parameters.AddWithValue("@UnitPrice", unitPrice);
-                                    detalleCommand.ExecuteNonQuery();
-                                }
-
-                           
-                                string updateStockQuery = "UPDATE Products SET Stock = Stock - @Quantity WHERE ProductID = @ProductID";
-                                using (var stockCommand = new MySqlCommand(updateStockQuery, connection, transaction))
-                                {
-                                    stockCommand.Parameters.AddWithValue("@Quantity", quantity);
-                                    stockCommand.Parameters.AddWithValue("@ProductID", productID);
-                                    stockCommand.ExecuteNonQuery();
-                                }
-                            }
-
-                          
-                            transaction.Commit();
-                            MessageBox.Show("Venta realizada exitosamente.");
-                            carrito.Clear();
-                            UpdateTotal();
-                            LoadProductos();
-                        }
-                        }
-                        catch (Exception ex)
-                        {
-                           
-                            transaction.Rollback();
-                            MessageBox.Show($"Error al realizar la venta: {ex.Message}");
-                        }
-                    }
-                }
+                int productID = Convert.ToInt32(dataGridViewProducts.SelectedRows[0].Cells[0].Value);
+                AddToCart(productID);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un producto para agregar.");
             }
         }
+
+        private void btnPerformSale_Click(object sender, EventArgs e)
+        {
+            string nit = txtCustomerNIT.Text.Trim();
+
+            if (string.IsNullOrEmpty(nit))
+            {
+                MessageBox.Show("Ingrese un NIT válido o 'CF' para consumidor final.");
+                return;
+            }
+
+            PerformSale(nit);
+        }
+
+
+
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
-
 }
