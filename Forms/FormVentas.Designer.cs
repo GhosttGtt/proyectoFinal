@@ -28,126 +28,244 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewCarrito = new System.Windows.Forms.DataGridView();
-            this.comboBoxClientes = new System.Windows.Forms.ComboBox();
-            this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
-            this.btnRealizarVenta = new System.Windows.Forms.Button();
-            this.lblTotal = new System.Windows.Forms.TextBox();
-            this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
-            this.command = new MySql.Data.MySqlClient.MySqlCommand();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarrito)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).BeginInit();
+            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCart = new System.Windows.Forms.DataGridView();
+            this.txtSearchProduct = new System.Windows.Forms.TextBox();
+            this.txtCustomerNIT = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.lblTitleForm = new System.Windows.Forms.Label();
+            this.btnPerformSale = new System.Windows.Forms.Button();
+            this.btnEliminarProducto = new System.Windows.Forms.Button();
+            this.cmbEmployees = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCart)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewCarrito
+            // dataGridViewProducts
             // 
-            this.dataGridViewCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCarrito.Location = new System.Drawing.Point(12, 39);
-            this.dataGridViewCarrito.Name = "dataGridViewCarrito";
-            this.dataGridViewCarrito.ReadOnly = true;
-            this.dataGridViewCarrito.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridViewCarrito.ShowEditingIcon = false;
-            this.dataGridViewCarrito.Size = new System.Drawing.Size(520, 217);
-            this.dataGridViewCarrito.TabIndex = 0;
+            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProducts.Location = new System.Drawing.Point(16, 100);
+            this.dataGridViewProducts.MultiSelect = false;
+            this.dataGridViewProducts.Name = "dataGridViewProducts";
+            this.dataGridViewProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewProducts.Size = new System.Drawing.Size(441, 149);
+            this.dataGridViewProducts.TabIndex = 0;
             // 
-            // comboBoxClientes
+            // dataGridViewCart
             // 
-            this.comboBoxClientes.FormattingEnabled = true;
-            this.comboBoxClientes.Location = new System.Drawing.Point(12, 12);
-            this.comboBoxClientes.Name = "comboBoxClientes";
-            this.comboBoxClientes.Size = new System.Drawing.Size(217, 21);
-            this.comboBoxClientes.TabIndex = 1;
+            this.dataGridViewCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCart.Location = new System.Drawing.Point(16, 255);
+            this.dataGridViewCart.Name = "dataGridViewCart";
+            this.dataGridViewCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCart.Size = new System.Drawing.Size(676, 297);
+            this.dataGridViewCart.TabIndex = 1;
             // 
-            // dataGridViewProductos
+            // txtSearchProduct
             // 
-            this.dataGridViewProductos.AllowUserToAddRows = false;
-            this.dataGridViewProductos.AllowUserToDeleteRows = false;
-            this.dataGridViewProductos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridViewProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridViewProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProductos.Location = new System.Drawing.Point(12, 262);
-            this.dataGridViewProductos.Name = "dataGridViewProductos";
-            this.dataGridViewProductos.ReadOnly = true;
-            this.dataGridViewProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProductos.ShowEditingIcon = false;
-            this.dataGridViewProductos.Size = new System.Drawing.Size(520, 128);
-            this.dataGridViewProductos.TabIndex = 2;
+            this.txtSearchProduct.Location = new System.Drawing.Point(466, 127);
+            this.txtSearchProduct.Name = "txtSearchProduct";
+            this.txtSearchProduct.Size = new System.Drawing.Size(226, 20);
+            this.txtSearchProduct.TabIndex = 2;
+            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             // 
-            // btnAgregarProducto
+            // txtCustomerNIT
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(138, 393);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarProducto.TabIndex = 3;
-            this.btnAgregarProducto.Text = "Agregar";
-            this.btnAgregarProducto.UseVisualStyleBackColor = true;
-            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
+            this.txtCustomerNIT.Location = new System.Drawing.Point(83, 76);
+            this.txtCustomerNIT.Name = "txtCustomerNIT";
+            this.txtCustomerNIT.Size = new System.Drawing.Size(226, 20);
+            this.txtCustomerNIT.TabIndex = 3;
+            this.txtCustomerNIT.Text = "NIT Cliente";
             // 
-            // btnRealizarVenta
+            // btnAdd
             // 
-            this.btnRealizarVenta.Location = new System.Drawing.Point(387, 10);
-            this.btnRealizarVenta.Name = "btnRealizarVenta";
-            this.btnRealizarVenta.Size = new System.Drawing.Size(145, 23);
-            this.btnRealizarVenta.TabIndex = 4;
-            this.btnRealizarVenta.Text = "Realizar venta";
-            this.btnRealizarVenta.UseVisualStyleBackColor = true;
-            this.btnRealizarVenta.Click += new System.EventHandler(this.btnRealizarVenta_Click);
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAdd.Location = new System.Drawing.Point(466, 179);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(226, 30);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // lblTotal
             // 
-            this.lblTotal.Location = new System.Drawing.Point(387, 395);
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(555, 555);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(145, 20);
+            this.lblTotal.Size = new System.Drawing.Size(31, 13);
             this.lblTotal.TabIndex = 5;
+            this.lblTotal.Text = "Total";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // numericUpDownCantidad
+            // txtQuantity
             // 
-            this.numericUpDownCantidad.Location = new System.Drawing.Point(12, 396);
-            this.numericUpDownCantidad.Name = "numericUpDownCantidad";
-            this.numericUpDownCantidad.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownCantidad.TabIndex = 6;
+            this.txtQuantity.Location = new System.Drawing.Point(529, 153);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(163, 20);
+            this.txtQuantity.TabIndex = 6;
+            this.txtQuantity.Text = "0";
             // 
-            // command
+            // btnHome
             // 
-            this.command.CacheAge = 0;
-            this.command.Connection = null;
-            this.command.EnableCaching = false;
-            this.command.Transaction = null;
+            this.btnHome.BackgroundImage = global::POS.Properties.Resources.iconHome;
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Location = new System.Drawing.Point(656, 12);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(36, 36);
+            this.btnHome.TabIndex = 7;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // lblTitleForm
+            // 
+            this.lblTitleForm.AutoSize = true;
+            this.lblTitleForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblTitleForm.Location = new System.Drawing.Point(12, 24);
+            this.lblTitleForm.Name = "lblTitleForm";
+            this.lblTitleForm.Size = new System.Drawing.Size(68, 24);
+            this.lblTitleForm.TabIndex = 13;
+            this.lblTitleForm.Text = "Ventas";
+            // 
+            // btnPerformSale
+            // 
+            this.btnPerformSale.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPerformSale.FlatAppearance.BorderSize = 0;
+            this.btnPerformSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPerformSale.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPerformSale.Location = new System.Drawing.Point(270, 555);
+            this.btnPerformSale.Name = "btnPerformSale";
+            this.btnPerformSale.Size = new System.Drawing.Size(160, 30);
+            this.btnPerformSale.TabIndex = 15;
+            this.btnPerformSale.Text = "Finalizar Compra";
+            this.btnPerformSale.UseVisualStyleBackColor = false;
+            this.btnPerformSale.Click += new System.EventHandler(this.btnPerformSale_Click);
+            // 
+            // btnEliminarProducto
+            // 
+            this.btnEliminarProducto.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarProducto.FlatAppearance.BorderSize = 0;
+            this.btnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEliminarProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEliminarProducto.Location = new System.Drawing.Point(466, 215);
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(222, 34);
+            this.btnEliminarProducto.TabIndex = 16;
+            this.btnEliminarProducto.Text = "Eliminar producto";
+            this.btnEliminarProducto.UseVisualStyleBackColor = false;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
+            // 
+            // cmbEmployees
+            // 
+            this.cmbEmployees.FormattingEnabled = true;
+            this.cmbEmployees.Location = new System.Drawing.Point(410, 76);
+            this.cmbEmployees.Name = "cmbEmployees";
+            this.cmbEmployees.Size = new System.Drawing.Size(278, 21);
+            this.cmbEmployees.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "NIT Cliente:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(348, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Vendedor:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(465, 156);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Cantidad:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(469, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Buscar Producto";
             // 
             // FormVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 450);
-            this.Controls.Add(this.numericUpDownCantidad);
+            this.ClientSize = new System.Drawing.Size(700, 600);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbEmployees);
+            this.Controls.Add(this.btnEliminarProducto);
+            this.Controls.Add(this.btnPerformSale);
+            this.Controls.Add(this.lblTitleForm);
+            this.Controls.Add(this.btnHome);
+            this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.btnRealizarVenta);
-            this.Controls.Add(this.btnAgregarProducto);
-            this.Controls.Add(this.dataGridViewProductos);
-            this.Controls.Add(this.comboBoxClientes);
-            this.Controls.Add(this.dataGridViewCarrito);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtCustomerNIT);
+            this.Controls.Add(this.txtSearchProduct);
+            this.Controls.Add(this.dataGridViewCart);
+            this.Controls.Add(this.dataGridViewProducts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVentas";
-            this.Text = "FormVentas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarrito)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).EndInit();
+            this.Load += new System.EventHandler(this.FormVentas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+
+
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewCarrito;
-        private System.Windows.Forms.ComboBox comboBoxClientes;
         private System.Windows.Forms.DataGridView dataGridViewProductos;
-        private System.Windows.Forms.Button btnAgregarProducto;
-        private System.Windows.Forms.Button btnRealizarVenta;
-        private System.Windows.Forms.TextBox lblTotal;
-        private System.Windows.Forms.NumericUpDown numericUpDownCantidad;
-        private MySql.Data.MySqlClient.MySqlCommand command;
+    
+        private System.Windows.Forms.DataGridView dataGridViewCarrito;
+       
+        private System.Windows.Forms.DataGridView dataGridViewProducts;
+        private System.Windows.Forms.DataGridView dataGridViewCart;
+        private System.Windows.Forms.TextBox txtSearchProduct;
+        private System.Windows.Forms.TextBox txtCustomerNIT;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Label lblTitleForm;
+        private System.Windows.Forms.Button btnPerformSale;
+        private System.Windows.Forms.Button btnEliminarProducto;
+        private System.Windows.Forms.ComboBox cmbEmployees;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
